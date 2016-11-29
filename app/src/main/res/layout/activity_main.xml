@@ -28,8 +28,9 @@
         android:onClick="test3"
         />
 
-    <TextView
+    <ImageView
+        android:id="@+id/img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        />
 </LinearLayout>
