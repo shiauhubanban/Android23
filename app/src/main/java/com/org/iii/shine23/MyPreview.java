@@ -29,10 +29,21 @@ public class MyPreview extends SurfaceView implements SurfaceHolder.Callback {
         }
     }
 
+    //當preview 改變解析度之類的
     @Override
     public void surfaceChanged(SurfaceHolder surfaceHolder, int i, int i1, int i2) {
-
+        try {
+            camera.stopPreview();
+        } catch (Exception e){
+        }
+        try {
+            camera.setPreviewDisplay(holder);
+            camera.startPreview();
+        } catch (Exception e){
+            Log.d("brad", " 錯誤設定觀景窗");
+        }
     }
+
 
     @Override
     public void surfaceDestroyed(SurfaceHolder surfaceHolder) {

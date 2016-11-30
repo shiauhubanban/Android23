@@ -72,7 +72,9 @@ public class MainActivity extends AppCompatActivity {
             take1(data);
         }else if (requestCode == 2 && resultCode == RESULT_OK){
             take2(data);
-        }
+        }else if (requestCode == 3 && resultCode == RESULT_OK){
+        take3(data);
+    }
     }
 
     //縮圖 資料放在INTENT裡面
@@ -85,7 +87,10 @@ public class MainActivity extends AppCompatActivity {
         Bitmap bmp = BitmapFactory.decodeFile(photoFile.getAbsolutePath());
         img.setImageBitmap(bmp);
     }
-
+    private void take3(Intent it){
+        Bitmap bmp = BitmapFactory.decodeFile(new File(sdroot,  "brad.jpg").getAbsolutePath());
+        img.setImageBitmap(bmp);
+    }
 
 
 }
